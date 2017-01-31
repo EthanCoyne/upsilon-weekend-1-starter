@@ -5,8 +5,14 @@
 
 }
 
-label, input, #employees {
+input, #employees {
   display: inline;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  padding-left: 10px;
 }
 #monthlyCost {
   /*text-decoration: underline;*/

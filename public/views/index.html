@@ -12,16 +12,11 @@
   <body ng-app="angularApp">
     <main class="container" ng-controller="Controller as infoCtrl">
     <form>
-      <label for="employeeFirstName">First Name</label>
-      <input type="text" id="employeeFirstName" name="employeeFirstName" ng-model="infoCtrl.employee.firstName"/>
-      <label for="employeeLastName">Last Name</label><br/>
-      <input type="text" id="employeeLastName" name="employeeLastName" ng-model="infoCtrl.employee.lastName"/>
-      <label for="employeeIdNumber">ID Number</label>
-      <input type="text" name="employeeIdNumber" ng-model="infoCtrl.employee.idNumber"/>
-      <label for="employeeJobTitle">Job Title</label><br/>
-      <input type="text" id="employeeJobTitle" name="employeeJobTitle" ng-model="infoCtrl.employee.title"/>
-      <label for="employeeSalary">Annual Salary</label>
-      <input type="text" name="employeeSalary" ng-model="infoCtrl.employee.salary"/>
+      <input type="text" id="employeeFirstName" name="employeeFirstName" placeholder="First Name"ng-model="infoCtrl.employee.firstName"/>
+      <input type="text" id="employeeLastName" name="employeeLastName" placeholder="Last Name"ng-model="infoCtrl.employee.lastName"/>
+      <input type="text" name="employeeIdNumber" placeholder="ID #"ng-model="infoCtrl.employee.idNumber"/>
+      <input type="text" id="employeeJobTitle" name="employeeJobTitle" placeholder="Job Title"ng-model="infoCtrl.employee.title"/>
+      <input type="text" name="employeeSalary" placeholder="Annual Salary"ng-model="infoCtrl.employee.salary"/>
       <button type="button" ng-click="infoCtrl.addEmp()">Submit</button>
     </form>
 
@@ -29,11 +24,11 @@
 
     <div class="head" id="employees">
       <h3>Employees</h3>
-        <p ng-repeat="employee in infoCtrl.employees">
+        <li ng-repeat="employee in infoCtrl.employees">
           Name: {{ employee.firstName }} {{employee.lastName}}<br>
           ID#: {{employee.idNumber}}<br>Job Title: {{employee.title}}<br>
           Salary: {{employee.salary}}
-          <button type="button" ng-click="infoCtrl.deleteEmp($index)">DELETE</button></p>
+          <button type="button" ng-click="infoCtrl.deleteEmp($index)">DELETE</button></li>
     </div>
     <!-- <div class="head" id="idNumber">
       <h3>ID #</h3>
