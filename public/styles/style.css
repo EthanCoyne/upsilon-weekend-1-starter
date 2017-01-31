@@ -5,7 +5,7 @@
 
 }
 
-label, input {
+label, input,  {
   display: inline;
 }
 #monthlyCost {
