@@ -23,7 +23,7 @@ app.controller('Controller', function () {
     info.employees.forEach(function(employee) {
       info.totalSalary += Number(employee.salary);
     });
-     (info.totalSalary /= 12).toFixed(2);
+     info.totalSalary = (info.totalSalary / 12).toFixed(2);
   };
 
 
