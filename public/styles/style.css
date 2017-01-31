@@ -1,8 +1,12 @@
-.head {
-  display: inline-block;
-  padding-left: 30px;
-  /*text-decoration:underline;*/
+.head, .container, {
+  display: inline;
+  /*padding-left: 30px;*/
 
+
+}
+
+label, input {
+  display: inline;
 }
 #monthlyCost {
   /*text-decoration: underline;*/

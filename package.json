@@ -1,0 +1,23 @@
+{
+  "name": "weekend1_angular_redux",
+  "version": "1.0.0",
+  "description": "redoing weekend 1 challenge with angular",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EthanCoyne/upsilon-weekend-1-starter.git"
+  },
+  "author": "ethan coyne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EthanCoyne/upsilon-weekend-1-starter/issues"
+  },
+  "homepage": "https://github.com/EthanCoyne/upsilon-weekend-1-starter#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}

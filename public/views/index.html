@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weekend 1</title>
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/vendors/normalize.css">
+    <link rel="stylesheet" href="/vendors/skeleton.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    </head>
+  <body ng-app="angularApp">
+    <main class="container" ng-controller="Controller as infoCtrl">
+    <form>
+      <label for="employeeFirstName">First Name</label>
+      <input type="text" id="employeeFirstName" name="employeeFirstName" ng-model="infoCtrl.employee.firstName"/>
+      <label for="employeeLastName">Last Name</label><br/>
+      <input type="text" id="employeeLastName" name="employeeLastName" ng-model="infoCtrl.employee.lastName"/>
+      <label for="employeeIdNumber">ID Number</label>
+      <input type="text" name="employeeIdNumber" ng-model="infoCtrl.employee.idNumber"/>
+      <label for="employeeJobTitle">Job Title</label><br/>
+      <input type="text" id="employeeJobTitle" name="employeeJobTitle" ng-model="infoCtrl.employee.title"/>
+      <label for="employeeSalary">Annual Salary</label>
+      <input type="text" name="employeeSalary" ng-model="infoCtrl.employee.salary"/>
+      <button type="button" ng-click="infoCtrl.addEmp()">Submit</button>
+    </form>
+
+
+
+    <div class="head" id="employees">
+      <h3>Employees</h3>
+        <p ng-repeat="employee in infoCtrl.employees">
+          Name: {{ employee.firstName }} {{employee.lastName}}<br>
+          ID#: {{employee.idNumber}}<br>Job Title: {{employee.title}}<br>
+          Salary: {{employee.salary}}
+          <button type="button" ng-click="infoCtrl.deleteEmp($index)">DELETE</button></p>
+    </div>
+    <!-- <div class="head" id="idNumber">
+      <h3>ID #</h3>
+    </div>
+    <div class="head" id="jobTitle">
+      <h3>Job Title</h3>
+    </div>
+    <div class="head" id="annualSalary">
+      <h3>Annual Salary</h3>
+    </div> -->
+    <div id="monthlyCost">
+      <h3>Total Monthly Expenses</h3>
+      <p>${{ infoCtrl.totalSalary }}</p>
+    </div> -->
+    </main>
+  </body>
+</html>

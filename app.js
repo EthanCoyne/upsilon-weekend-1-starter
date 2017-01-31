@@ -30,7 +30,7 @@ function appendDom(emp) {
   $emp.append('<p>' + emp.employeeFirstName + ' ' + emp.employeeLastName + '</p>'); // add our employee data
   $id.append('<p>' + emp.employeeIdNumber + '</p>');
   $title.append('<p>' + emp.employeeJobTitle + '</p>');
-  $annSal.append('<p>' + emp.employeeSalary + '</p>');
+  $annSal.append('<p>' + '$' + emp.employeeSalary + '</p>');
 
 
   $('#employees').append($emp); // append our div to the DOM
