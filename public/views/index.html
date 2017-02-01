@@ -11,14 +11,33 @@
     </head>
   <body ng-app="angularApp">
     <main class="container" ng-controller="Controller as infoCtrl">
-    <form>
-      <input type="text" id="employeeFirstName" name="employeeFirstName" placeholder="First Name"ng-model="infoCtrl.employee.firstName"/>
-      <input type="text" id="employeeLastName" name="employeeLastName" placeholder="Last Name"ng-model="infoCtrl.employee.lastName"/>
-      <input type="text" name="employeeIdNumber" placeholder="ID #"ng-model="infoCtrl.employee.idNumber"/>
-      <input type="text" id="employeeJobTitle" name="employeeJobTitle" placeholder="Job Title"ng-model="infoCtrl.employee.title"/>
-      <input type="text" name="employeeSalary" placeholder="Annual Salary"ng-model="infoCtrl.employee.salary"/>
-      <button type="button" ng-click="infoCtrl.addEmp()">Submit</button>
+    <form name="empForm" novalidate novalidate>
+      <input type="text" name="firstName" placeholder="First Name" ng-model="infoCtrl.employee.firstName"  required/>
+      <input type="text" name="lastName"placeholder="Last Name" ng-model="infoCtrl.employee.lastName" required/>
+      <input type="text" name="ID" placeholder="ID #" ng-model="infoCtrl.employee.idNumber" required/>
+      <input type="text" name="title" placeholder="Job Title" ng-model="infoCtrl.employee.title" required/>
+      <input type="text" name="salary" placeholder="Annual Salary" ng-model="infoCtrl.employee.salary" required/>
+      <button ng-disabled="empForm.$invalid" type="button" name="submit" ng-click="infoCtrl.addEmp()">Submit</button>
     </form>
+    <p ng-show="empForm.$invalid">Tell us about yourself!</p>
+    <p ng-show="empForm.$valid">Ready to Submit!</p>
+      <!--  -->
+
+
+
+<!-- <h1 ng-if="!empForm.firstName.$valid" ng-if="!empForm.lastName.$valid" ng-if="!empForm.ID.$valid" ng-if="!empForm.title.$valid" ng-if="!empForm.salary.$valid">The input field cannot be empty</h1> -->
+
+
+    <!-- <form name="form">
+   <label for="required">Toggle required: </label>
+   <input type="checkbox" ng-model="required" id="required" />
+   <br>
+   <label for="input">This input must be filled if `required` is true: </label>
+   <input type="text" ng-model="model" id="input" name="input" ng-required="required" /><br>
+   <hr>
+   required error set? = <code>{{form.input.$error.required}}</code><br>
+   model = <code>{{model}}</code>
+ </form> -->
 
 
 
@@ -30,15 +49,6 @@
           Salary: {{employee.salary}}
           <button type="button" ng-click="infoCtrl.deleteEmp($index)">DELETE</button></li>
     </div>
-    <!-- <div class="head" id="idNumber">
-      <h3>ID #</h3>
-    </div>
-    <div class="head" id="jobTitle">
-      <h3>Job Title</h3>
-    </div>
-    <div class="head" id="annualSalary">
-      <h3>Annual Salary</h3>
-    </div> -->
     <div id="monthlyCost">
       <h3>Total Monthly Expenses</h3>
       <p>${{ infoCtrl.totalSalary }}</p>
